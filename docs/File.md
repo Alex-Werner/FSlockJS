@@ -12,6 +12,20 @@
     await File.create('myfile.txt', 'Hello FS World.');
 ```
 
+
+#### async File.download(uri, [outputPath])
+
+Used to download a file over http or https.  
+
+- outputPath - Not required, when provided, will store at the requested location.
+
+```js
+    const uri = 'http://w3c.github.io/csvw/tests/test001.json';
+    const data = await File.download(uri);
+
+    await File.download(uri, 'test0001.json');
+```
+
 #### async File.ensure(path)
 
 ```js
