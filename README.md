@@ -1,7 +1,7 @@
-# FSLock
+# FSLockJS
 
-[![NPM Version](https://img.shields.io/npm/v/fslock.svg?&style=flat-square)](https://www.npmjs.org/package/fslock)
-[![Build Status](https://api.travis-ci.org/Alex-Werner/fslock.svg?branch=master)](https://travis-ci.com/Alex-Werner/fslock)
+[![NPM Version](https://img.shields.io/npm/v/fslockjs.svg?&style=flat-square)](https://www.npmjs.org/package/fslockjs)
+[![Build Status](https://api.travis-ci.org/Alex-Werner/fslockjs.svg?branch=master)](https://travis-ci.com/Alex-Werner/fslockjs)
 
 
 > Easy to use file system queue with locking and events.
@@ -39,7 +39,7 @@ And there just use that snipets to start playing ! :
 
 
 ```js
-const {FSLock, File, Directory} = require('FSLock');
+const {FSLock, File, Directory} = require('fslockjs');
 const queue = new FSLock();
 
 const start = async function () {
