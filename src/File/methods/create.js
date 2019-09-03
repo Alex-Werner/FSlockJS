@@ -37,8 +37,9 @@ module.exports = async function create(p, data = '') {
       try {
         write(res, /*lock*/);
       } catch (e) {
-        console.error('CREATE', p, 'error');
-        console.error(e);
+        rej(e);
+        throw e;
+
       }
     } else write(res);
   })

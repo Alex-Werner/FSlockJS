@@ -31,7 +31,8 @@ module.exports = async function remove(p) {
         })
 
       } catch (err) {
-        console.error(err);
+        reject(err);
+        throw err;
       }
     })).then(() => {
       fs.rmdir(p, async (err) => {

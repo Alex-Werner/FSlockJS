@@ -1,9 +1,15 @@
 ## File API 
 
-#### async File.append(path)
+#### async File.append(path, data)
 
 ```js
     await File.append('myfile.txt', 'Sincerely, The End.');
+```
+
+#### async File.appendJSON(path, data ={})
+
+```js
+    await File.append('myfile.json', {name:'Alex'});
 ```
 
 #### async File.create(path, [data=''])

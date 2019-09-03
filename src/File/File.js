@@ -1,5 +1,6 @@
 const File = {};
 File.append = require('./methods/append').bind(File);
+File.appendJSON = require('./methods/appendJSON').bind(File);
 File.create = require('./methods/create').bind(File);
 File.download = require('./methods/download').bind(File);
 File.exists = require('./methods/exists').bind(File);
