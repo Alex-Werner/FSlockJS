@@ -1,10 +1,3 @@
-const defaultProps = {
-  options:{
-    autoexec:true,
-    concurrency: null,//Infinite concurrent processes
-    timeout: 5000 //MS wait for execution
-  }
-}
 /**
  * FSQueue
  *
@@ -15,6 +8,13 @@ const defaultProps = {
  */
 class FSLock{
   constructor(props = {}){
+    const defaultProps = {
+      options:{
+        autoexec:true,
+        concurrency: null,//Infinite concurrent processes
+        timeout: 5000 //MS wait for execution
+      }
+    }
     this.queue = [];
     this.locks = {};
     this.options = {
