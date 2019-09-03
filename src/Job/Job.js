@@ -5,11 +5,10 @@ class Job extends EventEmitter {
     if(!props.command || !props.path){
       throw new Error('Unexpected new job properties');
     }
-
     this.command = props.command;
     this.path = props.path;
     this.params = props.params || null;
-    this.state = null;
+    this.state = 'idle';
     this.results = null;
   }
 }
