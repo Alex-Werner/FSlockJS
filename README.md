@@ -97,3 +97,14 @@ Also, we provide events on job
 
 Because of being able to do `await job.execution()`
 
+Which end up being a nice way to wait for the resolvement of a FS Job in concurrent conditions
+
+```js
+const job = await this.queue.add('File.exists', path).execution(); 
+const isExistingFile = job.results;
+```
+
+### Caveat ? 
+
+Right now, an instance of FSLock only deal locally with the locks. If needed, we can make two instance working together with using real os lock.   
+Submit issue if you need such features.
