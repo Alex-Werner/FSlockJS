@@ -104,6 +104,12 @@ const job = await this.queue.add('File.exists', path).execution();
 const isExistingFile = job.results;
 ```
 
+Alternatively equal to this below, that will only returns results when having it. 
+
+```js
+const results = await this.queue.add('File.exists', path).getResults(); 
+```
+
 ### Caveat ? 
 
 Right now, an instance of FSLock only deal locally with the locks. If needed, we can make two instance working together with using real os lock.   
