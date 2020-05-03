@@ -9,7 +9,8 @@ class Job extends EventEmitter {
     this.path = props.path;
     this.params = props.params || null;
     this.state = 'idle';
-    this.results = null;
+    this.result = null;
+    this.error = null;
   }
 }
 Job.prototype.execution = require('./methods/execution');

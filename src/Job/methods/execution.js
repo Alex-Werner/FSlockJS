@@ -1,5 +1,6 @@
 /**
  * Allow to await the execution of the job
+ * @returns Job
  **/
 module.exports = async function execution(){
   return new Promise((resolve => {
