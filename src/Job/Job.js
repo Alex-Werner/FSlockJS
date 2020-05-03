@@ -13,5 +13,4 @@ class Job extends EventEmitter {
   }
 }
 Job.prototype.execution = require('./methods/execution');
-Job.prototype.getResults = require('./methods/getResults');
 module.exports = Job;
