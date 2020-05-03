@@ -4,7 +4,7 @@
   "description": "Easy to use file system queue with locking and events. Provide Asynchronous utilities for Directories and File",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/ --recursive"
+    "test": "mocha src/**/*.spec.js --recursive"
   },
   "repository": {
     "type": "git",

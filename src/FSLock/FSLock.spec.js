@@ -30,17 +30,17 @@ describe('FSQueue',  function suite() {
 
     await queue.processNext();
     expect(job.state).to.equal('executed');
-    expect(job.results).to.equal(false);
+    expect(job.result).to.equal(false);
 
     await queue.processNext();
     expect(job2.state).to.equal('executed');
-    expect(job2.results).to.equal(true);
+    expect(job2.result).to.equal(true);
 
     const job3 = await queue.add('Directory.exists', usersPath);
     await queue.processNext();
     expect(job3.state).to.equal('executed');
     console.log(job3)
-    expect(job3.results).to.equal(true);
+    expect(job3.result).to.equal(true);
   });
   it('should works with file - SBTree work case', async function () {
     const doc = {"_id": "5d6d4123117055fa0b17bb15", "email": "jean@valjean.fr", "age": 27}
@@ -55,7 +55,7 @@ describe('FSQueue',  function suite() {
 
     //Queue is empty, file is existing now, let's read it.
 
-    const storeDoc = readJob.results;
+    const storeDoc = readJob.result;
     expect(storeDoc).to.deep.equal(Object.assign({}, {_id, email}));
 
     const updateJob = await queue.add('File.create', `${usersPath}/${doc._id}.json`, Object.assign({}, storeDoc, {age}))
@@ -64,7 +64,7 @@ describe('FSQueue',  function suite() {
     const verifyJob = await queue.add('File.read', `${usersPath}/${doc._id}.json`);
     await queue.processNext();
 
-    expect(verifyJob.results).to.deep.equal(doc);
+    expect(verifyJob.result).to.deep.equal(doc);
   });
   it('should have job emitting a event when ready', async function () {
     const doc = {"_id": "5d6d4123117055fa0b17bb16", "email": "alex@valjean.fr", "age": 27}
@@ -74,7 +74,7 @@ describe('FSQueue',  function suite() {
     return new Promise(async (res, rej)=>{
       readJob.on('executed', () => {
         expect(readJob.state).to.deep.equal('executed');
-        expect(readJob.results).to.deep.equal(doc);
+        expect(readJob.result).to.deep.equal(doc);
         res(true);
       })
 
@@ -93,7 +93,7 @@ describe('FSQueue',  function suite() {
     await readJob.execution();
 
     expect(readJob.state).to.deep.equal('executed');
-    expect(readJob.results).to.deep.equal(doc);
+    expect(readJob.result).to.deep.equal(doc);
 
     autoQueue.stop()
   });

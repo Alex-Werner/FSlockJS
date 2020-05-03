@@ -8,10 +8,10 @@ describe('File', () => {
     this.timeout(15000);
 
     it('should get if a file exists', async () => {
-      const exist = await File.exists(`./tests/fixtures/dir-b/file-b.md`);
+      const exist = await File.exists(`./fixtures/dir-b/file-b.md`);
       expect(exist).to.be.deep.equal(true);
 
-      const notexist = await File.exists(`./tests/fixtures/dir-b/file-not-exist.txt`);
+      const notexist = await File.exists(`./fixtures/dir-b/file-not-exist.txt`);
       expect(notexist).to.be.deep.equal(false);
     });
     it('should create a file', async () => {
@@ -51,7 +51,7 @@ describe('File', () => {
       expect(verifNotExist).to.be.equal(false);
     });
     it('should read a file', async () => {
-      const readPath = `./tests/fixtures/readTest.json`;
+      const readPath = `./fixtures/readTest.json`;
       const data = await File.read(readPath);
       expect(data).to.be.an('object');
       expect(data.tables).to.be.an('array');

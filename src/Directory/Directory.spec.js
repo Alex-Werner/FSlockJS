@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const path = require('path');
-const File = require('../../src/File/File');
-const Directory = require('../../src/Directory/Directory');
+const File = require('../File/File');
+const Directory = require('./Directory');
 
 describe('directory', () => {
   it('should have a valid structure', () => {
@@ -34,13 +34,13 @@ describe('directory', () => {
         });
   });
   it('should get if a directory exists', async () => {
-    const exist = await Directory.exists(`./tests/fixtures/dir-a`);
+    const exist = await Directory.exists(`./fixtures/dir-a`);
     expect(exist).to.be.deep.equal(true);
 
-    const notexist = await Directory.exists(`./tests/fixtures/dir-not-exist`);
+    const notexist = await Directory.exists(`./fixtures/dir-not-exist`);
     expect(notexist).to.be.deep.equal(false);
 
-    const fileexist = await Directory.exists(`./tests/fixtures/file-a.js`);
+    const fileexist = await Directory.exists(`./fixtures/file-a.js`);
     expect(fileexist).to.be.deep.equal(true);
   });
   it('should create a directory', async () => {
