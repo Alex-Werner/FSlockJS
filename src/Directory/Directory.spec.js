@@ -18,6 +18,7 @@ describe('directory', () => {
       'FSLock',
       'File',
       'Job',
+     'errors'
     ];
     expect(listSource).to.be.deep.equal(expectedListSource);
 
