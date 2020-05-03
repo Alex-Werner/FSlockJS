@@ -38,8 +38,15 @@ module.exports = async function processNext(index=0, tries=0) {
     job.state = 'processing';
     job.emit('processing');
 
-    job.results = await execCommand(command,path, params);
+    job.error = null;
+    job.result = null;
 
+    const executionResult = await execCommand(command,path, params);
+    if(executionResult.error){
+      job.error = executionResult.error
+    }else {
+      job.result = executionResult.result;
+    }
     job.state = 'executed';
     job.emit('executed');
 
