@@ -34,7 +34,7 @@ module.exports = async function download(uri, outputPath) {
         } else if (statusCode === 303 || statusCode === 302 || statusCode === 301) {
           // Redirection
           const newURL = response.headers.location;
-          console.log('Redirect to', newURL);
+          // console.log('Redirect to', newURL);
           // throw("Moved to ",newURL)
           return resolve(this.download(newURL, outputPath));
         } else if (statusCode === 404) {

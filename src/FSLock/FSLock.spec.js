@@ -39,7 +39,6 @@ describe('FSQueue',  function suite() {
     const job3 = await queue.add('Directory.exists', usersPath);
     await queue.processNext();
     expect(job3.state).to.equal('executed');
-    console.log(job3)
     expect(job3.result).to.equal(true);
   });
   it('should works with file - SBTree work case', async function () {
