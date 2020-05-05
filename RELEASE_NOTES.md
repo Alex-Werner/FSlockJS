@@ -1,3 +1,8 @@
+# 2.0.1 
+
+- impr: improve queue processing for big queue (00c80b14475bf82e9f8b1344d451a43997c76b9f)
+- impr: proper warning on incorrect command (a9016a0657cadd2a1d02ea7ee03bc95e4def8bb0)
+
 # 2.0.0 
 
 - impr: added CannotReadFileNotFound error (#51bea54a4f68f905c3ead768cd3cbfbdf381779f)
