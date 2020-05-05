@@ -49,13 +49,9 @@ module.exports = async function processNext(index=0, tries=0) {
     }
     job.state = 'executed';
     job.emit('executed');
+    this.state = 'idle';
 
-    // FIXME : Actually, it works without this, but I saw cases where .exists was returning false
-    // Keeping this except requested otherwise
-    setTimeout(()=>{
-      delete self.locks[path]
-      self.state = 'idle';
-      resolve(true);
-    }, 20);
+    delete self.locks[path];
+    return resolve(true);
   })
 };

@@ -3,15 +3,17 @@ module.exports = function start() {
   if (!this.autoExecStarted) this.autoExecStarted = true;
 
   const continuouslyExecute = () => {
-
+    if (self.state === 'processingAll') {
+      return;
+    }
     self.processAll()
         .then(() => {
           if (self.autoExecStarted) {
             setTimeout(() => {
-               continuouslyExecute();
-            }, 50)
+              continuouslyExecute();
+            }, 20)
           }
         })
   }
-   continuouslyExecute();
+  continuouslyExecute();
 }
