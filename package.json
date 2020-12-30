@@ -30,6 +30,6 @@
   "homepage": "https://github.com/Alex-Werner/FSlock#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^8.2.1"
   }
 }
