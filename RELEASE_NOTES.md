@@ -1,3 +1,9 @@
+# 2.0.2 
+
+- feat: use .once instead of .on on resolving execution (#813c64854431f3d2847c4fa049106caf2b823987)
+- docs: add usage example
+- chore: install missing lodash.map (#78f0947a500de0dc601d834112306c6b4dca356a)
+
 # 2.0.1 
 
 - impr: improve queue processing for big queue (00c80b14475bf82e9f8b1344d451a43997c76b9f)
