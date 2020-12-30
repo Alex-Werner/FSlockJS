@@ -1,4 +1,4 @@
-const { map } = require('lodash');
+const map = require('lodash.map');
 
 const processQueue = async (self) => {
   if (self.queue.length > 0) {
