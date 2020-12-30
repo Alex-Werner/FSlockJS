@@ -5,7 +5,7 @@
 module.exports = async function execution(){
   return new Promise((resolve => {
     if(this.state==='executed') return resolve(this);
-    this.on('executed', ()=>{
+    this.once('executed', ()=>{
       return resolve(this);
     })
   }))
