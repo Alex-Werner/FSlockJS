@@ -1,6 +1,6 @@
 {
   "name": "fslockjs",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Easy to use file system queue with locking and events. Provide Asynchronous utilities for Directories and File",
   "main": "index.js",
   "scripts": {
