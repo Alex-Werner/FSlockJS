@@ -1,5 +1,3 @@
-const map = require('lodash.map');
-
 const processQueue = async (self) => {
   if (self.queue.length > 0) {
     await self.processNext();

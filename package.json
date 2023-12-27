@@ -29,10 +29,7 @@
   ],
   "homepage": "https://github.com/Alex-Werner/FSlock#readme",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1"
-  },
-  "dependencies": {
-    "lodash.map": "^4.6.0"
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
   }
 }
