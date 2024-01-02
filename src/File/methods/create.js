@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const Directory = require('../../Directory/Directory')
+import fs from 'fs';
+import path from 'path';
+import Directory from '../../Directory/Directory.js';
 
 function stringify(obj, options) {
   let spaces;
@@ -17,7 +17,7 @@ function stringify(obj, options) {
   return str.replace(/\n/g, EOL) + EOL;
 }
 
-module.exports = async function create(p, data = '') {
+async function create(p, data = '') {
   const self = this;
 
   return new Promise(async (res, rej) => {
@@ -44,3 +44,5 @@ module.exports = async function create(p, data = '') {
     } else write(res);
   })
 }
+
+export default create;

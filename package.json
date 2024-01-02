@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/Alex-Werner/FSlock/issues"
   },
+  "type": "module",
   "keywords": [
     "queue",
     "job",

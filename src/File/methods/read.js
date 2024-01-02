@@ -1,7 +1,7 @@
-const fs = require('fs');
-const CannotReadFileNotFound = require('../../errors/CannotReadFileNotFound');
+import fs from 'fs';
+import CannotReadFileNotFound from '../../errors/CannotReadFileNotFound.js';
 
-module.exports = async function read(p, options = {}) {
+async function read(p, options = {}) {
   const isFile = await this.exists(p);
   if (!isFile) throw new CannotReadFileNotFound(`CannotReadFileNotFound({path: ${p}}`);
   return new Promise(async (res, rej) => {
@@ -25,3 +25,5 @@ module.exports = async function read(p, options = {}) {
     }
   });
 }
+
+export default read;

@@ -1,7 +1,8 @@
-const {expect} = require('chai');
-const FSLock = require('../../src/FSLock/FSLock');
-const Job = require('../../src/Job/Job');
-const Directory = require('../../src/Directory/Directory');
+import {expect} from 'chai';
+
+import FSLock from '../../src/FSLock/FSLock.js';
+import Job from '../../src/Job/Job.js';
+import Directory from '../../src/Directory/Directory.js';
 
 describe('FSQueue',  function suite() {
   this.timeout(10000);

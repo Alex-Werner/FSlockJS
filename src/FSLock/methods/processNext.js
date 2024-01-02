@@ -1,10 +1,10 @@
-const execCommand = require('./ops/execCommand');
+import execCommand from './ops/execCommand.js';
 /**
  *
  * @param index {default:0} - Specify which index to process
  * @returns {Promise<boolean>}
  */
-module.exports = async function processNext(index=0, tries=0) {
+async function processNext(index=0, tries=0) {
   const self = this;
   return new Promise(async (resolve, reject) => {
     self.state = 'processing';
@@ -55,3 +55,5 @@ module.exports = async function processNext(index=0, tries=0) {
     return resolve(true);
   })
 };
+
+export default processNext;

@@ -1,8 +1,8 @@
-const File = require('../../../File/File');
-const Directory = require('../../../Directory/Directory');
+import File from '../../../File/File.js';
+import Directory from '../../../Directory/Directory.js';
 
 const utils = {File, Directory}
-module.exports = async function execCommand(command, path, params){
+async function execCommand(command, path, params){
   let result, error;
   try{
     const [type,fn] = command.split('.');
@@ -18,3 +18,5 @@ module.exports = async function execCommand(command, path, params){
   }
   return {result, error};
 }
+
+export default execCommand;

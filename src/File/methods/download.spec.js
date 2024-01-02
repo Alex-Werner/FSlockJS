@@ -1,13 +1,13 @@
-const { expect } = require('chai');
-const Directory = require('../../src/Directory/Directory');
-const File = require('../../src/File/File');
+import { expect } from 'chai';
+import Directory from '../../Directory/Directory.js';
+import File from '../../File/File.js';
 
 describe('File - download', function suite() {
   this.timeout(15000);
 
   it('should download a file', async () => {
     const uri = 'http://w3c.github.io/csvw/tests/test001.json';
-    const validPath = `./tests/fixtures/readTest.json`;
+    const validPath = `./fixtures/readTest.json`;
     const validData = await File.read(validPath);
     const outputFile = `.fs.tests-file/writeTest.json`;
 

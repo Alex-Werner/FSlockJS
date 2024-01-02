@@ -1,7 +1,6 @@
-const { expect } = require('chai');
-const path = require('path');
-const File = require('../../src/File/File');
-const Directory = require('../../src/Directory/Directory');
+import { expect } from 'chai';
+import File from '../../src/File/File.js';
+import Directory from '../../src/Directory/Directory.js';
 
 describe('File', () => {
   describe('file', function suite() {

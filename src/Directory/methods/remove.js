@@ -1,6 +1,7 @@
-const fs = require('fs');
-const path = require('path')
-module.exports = async function remove(p) {
+import fs from 'fs';
+import path from 'path';
+
+async function remove(p) {
   const files = await this.list(p);
   return new Promise((resolve, reject) => {
     // If there is file, we remove them first
@@ -53,3 +54,6 @@ module.exports = async function remove(p) {
     })
   });
 }
+
+
+export default remove;

@@ -1,12 +1,14 @@
-module.exports = async function append(p, data = {}) {
+async function appendJSON(p, data = {}) {
   const self = this;
 
   return new Promise(async (resolve, reject) => {
     let json = {};
-    if (await this.exists(p)) {
-      json = await this.read(p);
+    if (await self.exists(p)) {
+      json = await self.read(p);
     }
-    const res = await this.create(p, Object.assign({}, json, data));
+    const res = await self.create(p, Object.assign({}, json, data));
     resolve(res)
   });
 }
+
+export default appendJSON;

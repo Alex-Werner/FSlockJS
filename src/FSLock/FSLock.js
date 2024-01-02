@@ -1,3 +1,10 @@
+import add from './methods/add.js';
+import get from './methods/get.js';
+import processNext from './methods/processNext.js';
+import processAll from './methods/processAll.js';
+import start from './methods/start.js';
+import stop from './methods/stop.js';
+
 /**
  * FSQueue
  *
@@ -6,36 +13,37 @@
  * Ideally, we should have way to add to the
  *
  */
-class FSLock{
-  constructor(props = {}){
-    const defaultProps = {
-      options:{
-        autoexec:true,
-        concurrency: null,//Infinite concurrent processes
-        timeout: 5000 //MS wait for execution
-      }
-    }
-    this.queue = [];
-    this.locks = {};
-    this.options = {
-      autoexec: (props.autoexec!==undefined) ? props.autoexec : defaultProps.options.autoexec
-    };
-    this.state = 'idle';
-    this.autoExecStarted = false;
+class FSLock {
+    constructor(props = {}) {
+        const defaultProps = {
+            options: {
+                autoexec: true,
+                concurrency: null,//Infinite concurrent processes
+                timeout: 5000 //MS wait for execution
+            }
+        }
+        this.queue = [];
+        this.locks = {};
+        this.options = {
+            autoexec: (props.autoexec !== undefined) ? props.autoexec : defaultProps.options.autoexec
+        };
+        this.state = 'idle';
+        this.autoExecStarted = false;
 
-    if(this.options.autoexec){
-      this.start();
+        if (this.options.autoexec) {
+            this.start();
+        }
     }
-  }
 };
+
 // Elements added to the queue will then need to be executed with manually except if autoexec
 // Return a job
-FSLock.prototype.add = require('./methods/add');
-FSLock.prototype.get = require('./methods/get');
-FSLock.prototype.processNext = require('./methods/processNext');
-FSLock.prototype.processAll = require('./methods/processAll');
-FSLock.prototype.start = require('./methods/start');
-FSLock.prototype.stop = require('./methods/stop');
+FSLock.prototype.add = add;
+FSLock.prototype.get = get;
+FSLock.prototype.processNext = processNext;
+FSLock.prototype.processAll = processAll;
+FSLock.prototype.start = start;
+FSLock.prototype.stop = stop;
 
 // Remove last job in queue
 // FSQueue.prototype.pop = require('./methods/pop');
@@ -45,4 +53,5 @@ FSLock.prototype.stop = require('./methods/stop');
 
 // Try to execute a passed job in first
 // FSQueue.prototype.exec = require('./methods/exec');
-module.exports = FSLock;
+
+export default FSLock;

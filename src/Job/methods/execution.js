@@ -2,7 +2,7 @@
  * Allow to await the execution of the job
  * @returns Job
  **/
-module.exports = async function execution(){
+async function execution(){
   return new Promise((resolve => {
     if(this.state==='executed') return resolve(this);
     this.once('executed', ()=>{
@@ -10,3 +10,5 @@ module.exports = async function execution(){
     })
   }))
 }
+
+export default execution;

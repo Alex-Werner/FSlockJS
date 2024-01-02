@@ -1,8 +1,8 @@
-const { expect } = require('chai');
-const read = require('./read');
-const exists = require('./exists');
-const fixtureFile = require('../../../fixtures/readTest')
-const CannotReadFileNotFound = require('../../errors/CannotReadFileNotFound');
+import { expect } from 'chai';
+import read from './read.js';
+import exists from './exists.js';
+import fixtureFile from '../../../fixtures/readTest.json'
+import CannotReadFileNotFound from '../../errors/CannotReadFileNotFound.js';
 describe('File.read', function(){
   it('should work', async function () {
       const res = await read.call({exists},'./fixtures/readTest.json');

@@ -1,4 +1,4 @@
-module.exports = async function ensure(p) {
+async function ensure(p) {
   const exist = await this.exists(p);
 
   if(!exist){
@@ -9,3 +9,5 @@ module.exports = async function ensure(p) {
   }
   return exist;
 }
+
+export default ensure;

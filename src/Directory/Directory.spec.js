@@ -1,7 +1,5 @@
-const { expect } = require('chai');
-const path = require('path');
-const File = require('../File/File');
-const Directory = require('./Directory');
+import { expect } from 'chai';
+import Directory from './Directory.js';
 
 describe('directory', () => {
   it('should have a valid structure', () => {

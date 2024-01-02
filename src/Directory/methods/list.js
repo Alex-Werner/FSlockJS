@@ -1,5 +1,6 @@
-const fs = require('fs');
-module.exports = async function list(p = '') {
+import fs from 'fs';
+
+async function list(p = '') {
   return new Promise((resolve, reject) => {
     fs.readdir(p, (err, list) => {
       if (err && err.code === 'ENOENT') {
@@ -11,3 +12,5 @@ module.exports = async function list(p = '') {
     });
   });
 }
+
+export default list;

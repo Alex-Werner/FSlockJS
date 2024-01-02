@@ -6,7 +6,7 @@ const processQueue = async (self) => {
   }
 };
 
-module.exports = async function processAll() {
+async function processAll() {
   this.state = 'processingAll';
   const self = this;
   if (this.queue.length === 0) {
@@ -19,3 +19,5 @@ module.exports = async function processAll() {
   await processQueue(self);
   this.state = 'idle';
 };
+
+export default processAll;

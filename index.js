@@ -1,6 +1,5 @@
-const FSLock = require('./src/FSLock/FSLock')
-const Directory = require('./src/Directory/Directory')
-const File = require('./src/File/File')
-module.exports = {
-  FSLock, File, Directory
-}
+import FSLock from './src/FSLock/FSLock.js';
+import Directory from './src/Directory/Directory.js';
+import File from './src/File/File.js';
+
+export {FSLock, File, Directory};

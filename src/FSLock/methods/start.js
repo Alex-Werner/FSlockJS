@@ -1,4 +1,4 @@
-module.exports = function start() {
+function start() {
   const self = this;
   if (!this.autoExecStarted) this.autoExecStarted = true;
 
@@ -17,3 +17,5 @@ module.exports = function start() {
   }
   continuouslyExecute();
 }
+
+export default start;

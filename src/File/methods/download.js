@@ -1,15 +1,16 @@
-const url = require('url');
-const http = require('http');
-const https = require('https');
-const fs = require('fs');
-module.exports = async function download(uri, outputPath) {
+import url from 'url';
+import http from 'http';
+import https from 'https';
+import fs from 'fs';
+
+async function download(uri, outputPath) {
   return new Promise((res, rej) => {
     let store = true;
     return new Promise(async (resolve, reject) => {
       if (!uri) reject(new Error('Require uri'));
       if (!outputPath) store = false;
       if (store) await this.ensure(outputPath);
-      const timeout = 20 * 1000;// 20 seconde timeout (time to get the response)
+      const timeout = 20 * 1000;// 20 seconds timeout (time to get the response)
       const {protocol} = url.parse(uri);
       const req = (protocol === 'https:') ? https : http;
 
@@ -57,3 +58,5 @@ module.exports = async function download(uri, outputPath) {
     });
   });
 }
+
+export default download;

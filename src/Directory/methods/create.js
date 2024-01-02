@@ -1,6 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-module.exports = async function create(p) {
+import fs from 'fs';
+import path from 'path';
+
+async function create(p) {
   const self = this;
   return new Promise((resolve, reject) => {
     fs.mkdir(p, async (err) => {
@@ -16,3 +17,5 @@ module.exports = async function create(p) {
     });
   });
 }
+
+export default create;
